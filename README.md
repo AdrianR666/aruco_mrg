@@ -30,8 +30,8 @@ sudo apt update
 sudo apt install ros-${ROS_DISTRO}-cv-bridge ros-${ROS_DISTRO}-image-transport ros-${ROS_DISTRO}-tf2* libopencv-dev
 
 # Compilar
-cd ~/aruco_ws
-colcon build
-source install/setup.bash
+- cd ~/aruco_ws
+- colcon build
+- source install/setup.bash
 
 

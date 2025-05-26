@@ -12,6 +12,11 @@ find_package(sensor_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -27,7 +32,14 @@ endif()
 
 add_executable(aruco_detector_node src/aruco_detector_node.cpp  src/aruco_processor.cpp)
 
-ament_target_dependencies(aruco_detector_node rclcpp sensor_msgs cv_bridge image_transport)
+ament_target_dependencies(aruco_detector_node 
+rclcpp sensor_msgs 
+cv_bridge 
+image_transport 
+tf2 
+tf2_ros 
+geometry_msgs
+tf2_geometry_msgs)
 
 target_link_libraries(aruco_detector_node ${OpenCV_LIBS})
 
